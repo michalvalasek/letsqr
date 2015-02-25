@@ -1,4 +1,4 @@
-# QR Here
+# Let's QR!
 Simple QR Codes generator webapp built with [Meteor.js](https://www.meteor.com/)
 
 #### Run locally:
