@@ -1,34 +1,36 @@
 <template name="generator">
   <div class="row">
     <div class="col-xs-12">
-      <h1>QR generátor</h1>
-      <p class="lead">Vložte link, stiahnite si QR kód.</p>
+      <h1>Let's QR!</h1>
+      <p class="lead">Enter a link, get your QR code.</p>
     </div>
   </div>
 
   <div class="row generator-form">
     <div class="col-sm-12 col-md-9">
-      <input type="text" id="input-url" class="form-control" placeholder="Sem vložte link" />
-      <p class="text-danger text-center hidden">Zadaný text musí byť korektná adresa URL</p>
+      <input type="text" id="input-url" class="form-control" placeholder="http://" />
+      <p class="text-danger text-center hidden">Must be a valid URL.</p>
     </div>
     <div class="hidden-lg hidden-md">&nbsp;</div>
     <div class="col-sm-4 col-sm-offset-4 col-md-3 col-md-offset-0">
-      <button name="submit" id="button-submit" class="btn btn-success" disabled>
+      <button name="submit" id="button-submit" class="btn btn-inverse" disabled>
         <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
-        Vygenerovať QR kód
+        Let's QR!
       </button>
     </div>
   </div>
 
-  <div id="qr-code-area" class="panel panel-default collapse">
+  <div id="qr-code-area" class="panel panel-default">
     <div class="panel-heading">Váš QR kód:</div>
     <div class="panel-body text-center">
       <div id="qrcode" class="img-thumbnail"></div>
 
       <div class="download-link-wrapper">
-        <a href="#" target="_blank" download="QR_here.png" class="download-link btn btn-primary">
+        <a href="#" target="_blank" download="QR_here.png" class="download-link btn btn-inverse">
           <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-          Uložiť kód ako obrázok
+        </a>
+        <a href="#" class="mail-link btn btn-inverse">
+          <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
         </a>
       </div>
     </div>

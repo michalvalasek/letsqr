@@ -1,9 +1,9 @@
 Template.history.helpers({
   inputs: function(){
-    return Inputs.find({},{limit:5, sort: {createdAt: -1}});
+    return Inputs.find({},{limit:10, sort: {createdAt: -1}});
   },
   formatDate: function(date) {
-    return moment(date).format('DD.MM.YYYY');
+    return moment(date).format('DD/MM/YYYY');
   }
 });
 

@@ -1,5 +1,5 @@
 <template name="history">
-  <h3>História</h3>
+  <h3>History</h3>
   <div id="input-history" class="panel-group" role="tablist" aria-multiselectable="true">
     {{#each inputs}}
       <div class="panel panel-default">
@@ -12,11 +12,10 @@
         </div>
         <div id="collapse_{{_id}}" class="panel-collapse collapse" role="tabpanel" aria-labeledby="heading_{{_id}}">
           <div class="panel-body">
-            <p><b>typ:</b> {{type}}</p>
-            <p><b>dátum:</b> {{formatDate createdAt}}</p>
-            <a class="show-code btn btn-info btn-xs" href="#" title="Zobraziť QR kód">
+            <p><b>Date:</b> {{formatDate createdAt}}</p>
+            <a class="show-code btn btn-inverse btn-xs" href="#" title="Show the QR code">
               <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
-              Ukáž QR!
+              Let's QR!
             </a>
           </div>
         </div>
