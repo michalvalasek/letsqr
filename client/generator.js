@@ -5,15 +5,17 @@ Template.generator.events({
     var enable_submit = input.length && validUrl(input);
     template.$('#button-submit').prop('disabled', !enable_submit);
     template.$('.generator-form p.text-danger').toggleClass('hidden',(input.length<1 || validUrl(input)));
+
+    if (enable_submit===true && event.keyCode==13) {
+      template.$('#button-submit').click();
+    }
   },
 
   'click #button-submit': function(event, template) {
     var url = template.find('#input-url').value.toString();
     if (url.length && validUrl(url)) {
       template.$('#qrcode').empty().qrcode({
-        text: url,
-        width: 320,
-        height: 320
+        text: url
       });
       template.$('#qr-code-area').removeClass('collapse');
 
