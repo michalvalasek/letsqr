@@ -4,7 +4,7 @@ Template.generator.events({
     var input = event.target.value;
 
     // prepend the "http://" if missing
-    if (input.indexOf('http')!=0) {
+    if (input.length>3 && input.indexOf('http')!=0) {
       input = 'http://' + input;
       event.target.value = input;
     }
