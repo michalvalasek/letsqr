@@ -1,0 +1,28 @@
+<body>
+  <div id="wrap">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        {{> navigation}}
+      </div>
+    </nav>
+
+    <div id="main-container" class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-9">
+          {{> generator}}
+        </div>
+        <div class="hidden-xs col-sm-3">
+          {{> history}}
+        </div>
+      </div>
+    </div>
+
+    <div id="push"></div>
+  </div>
+
+  <div id="footer">
+    <div class="container-fluid">
+      <p class="text-right">Created by Digital Hive.</p>
+    </div>
+  </div>
+</body>
