@@ -4,6 +4,7 @@ Template.generator.events({
     var input = event.target.value;
     var enable_submit = input.length && validUrl(input);
     template.$('#button-submit').prop('disabled', !enable_submit);
+    template.$('.generator-form p.text-danger').toggleClass('hidden',(input.length<1 || validUrl(input)));
   },
 
   'click #button-submit': function(event, template) {
