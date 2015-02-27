@@ -3,12 +3,6 @@ Template.generator.events({
   'keyup #input-url': function(event, template){
     var input = event.target.value;
 
-    // prepend the "http://" if missing
-    if (input.length>3 && input.indexOf('http')!=0) {
-      input = 'http://' + input;
-      event.target.value = input;
-    }
-
     var enable_submit = input.length && validUrl(input);
     template.$('#button-submit').prop('disabled', !enable_submit);
     template.$('.generator-form p.text-danger').toggleClass('hidden',(input.length<1 || validUrl(input)));
@@ -20,6 +14,12 @@ Template.generator.events({
 
   'click #button-submit': function(event, template) {
     var url = template.find('#input-url').value.toString();
+
+    // prepend the "http://" if missing
+    if (url.indexOf('http')!=0) {
+      url = 'http://' + url;
+      template.find('#input-url').value = url;
+    }
 
     if (url.length && validUrl(url)) {
       template.$('#qrcode').empty().qrcode({
