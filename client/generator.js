@@ -23,7 +23,9 @@ Template.generator.events({
 
     if (url.length && validUrl(url)) {
       template.$('#qrcode').empty().qrcode({
-        text: url
+        text: url,
+        color: "#000000",
+        bgColor: "#ffffff"
       });
       template.$('#qr-code-area').hide().slideDown();
 
@@ -31,12 +33,7 @@ Template.generator.events({
       template.$('.download-link').attr('href',dataUrl);
 
       if (Session.get('last-input') != url) { // we don't want to save the same thing over and over again
-        var timestamp = (new Date()).getTime();
-        Inputs.insert({
-          'type': 'url',
-          'value': url,
-          'createdAt': new Date(timestamp)
-        });
+        Meteor.call('addInput', 'url', url);
         Session.set('last-input',url);
       }
     }

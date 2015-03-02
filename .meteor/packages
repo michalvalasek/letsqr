@@ -5,10 +5,9 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 less
 nemo64:bootstrap
 steeve:jquery-qrcode
 momentjs:moment
 meteorhacks:kadira
+email

@@ -8,7 +8,7 @@
 
   <div class="row generator-form">
     <div class="col-sm-12 col-md-9">
-      <input type="text" id="input-url" class="form-control" placeholder="http://" />
+      <input type="url" id="input-url" class="form-control" placeholder="http://" />
       <p class="text-danger text-center hidden">Must be a valid URL.</p>
     </div>
     <div class="hidden-lg hidden-md">&nbsp;</div>
@@ -29,7 +29,7 @@
         <a href="#" target="_blank" download="QR_here.png" class="download-link btn btn-inverse  ripple-effect">
           <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
         </a>
-        <a href="#" class="mail-link btn btn-inverse ripple-effect">
+        <a href="#" class="mail-link btn btn-inverse ripple-effect" data-toggle="modal" data-target="#mail-modal">
           <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
         </a>
       </div>

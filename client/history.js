@@ -1,6 +1,6 @@
 Template.history.helpers({
-  inputs: function(){
-    return Inputs.find({},{limit:10, sort: {createdAt: -1}});
+  latestInputs: function(){
+    return Inputs.find({}, {sort: {createdAt: -1}}).fetch();
   },
   simplifyUrl: function(url) {
     return url.split('://')[1];
