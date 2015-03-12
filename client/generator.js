@@ -32,6 +32,9 @@ Template.generator.events({
       var dataUrl = template.$('#qrcode canvas')[0].toDataURL();
       template.$('.download-link').attr('href',dataUrl);
 
+      var domain = url.match(/:\/\/(?:www\.)?(.[^/]+)(.*)/)[1].replace('.','_');
+      template.$('.download-link').attr('download','letsqr_'+domain+'.png');
+
       if (Session.get('last-input') != url) { // we don't want to save the same thing over and over again
         Meteor.call('addInput', 'url', url);
         Session.set('last-input',url);
