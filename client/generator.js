@@ -35,9 +35,14 @@ Template.generator.events({
       var domain = url.match(/:\/\/(?:www\.)?(.[^/]+)(.*)/)[1].replace('.','_');
       template.$('.download-link').attr('download','letsqr_'+domain+'.png');
 
-      if (Session.get('last-input') != url) { // we don't want to save the same thing over and over again
+      if (! Inputs.findOne({value: url})) {
+      // if (Session.get('last-input') != url) {
         Meteor.call('addInput', 'url', url);
-        Session.set('last-input',url);
+        // Session.set('last-input',url);
+        GAnalytics.event("entry","added","url",url);
+      }
+      else {
+        GAnalytics.event("entry","displayed","url",url);
       }
     }
     else {
@@ -45,7 +50,8 @@ Template.generator.events({
     }
   },
 
-  'click .mail-link': function(event, template) {
-    event.preventDefault();
+  'click .download-link': function(event, template) {
+    var url = template.find('#input-url').value.toString();
+    GAnalytics.event("entry","download","url",url);
   }
 });

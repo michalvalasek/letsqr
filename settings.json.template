@@ -2,5 +2,10 @@
   "kadira": {
     "appId": "",
     "appSecret": ""
+  },
+  "public" : {
+    "ga": {
+      "account": "UA-XXXXXXX-Y"
+    }
   }
 }
