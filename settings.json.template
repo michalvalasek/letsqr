@@ -1,11 +1,12 @@
 {
-  "kadira": {
-    "appId": "",
-    "appSecret": ""
-  },
   "public" : {
     "ga": {
       "account": "UA-XXXXXXX-Y"
+    }
+  },
+  "galaxy.meteor.com": {
+    "env": {
+      "MONGO_URL": "mongodb://<user>:<password>@ds159509.mlab.com:59509/letsqr"
     }
   }
 }
